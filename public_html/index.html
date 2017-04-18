@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Graficas Morris</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel=stylesheet href="css/estilitos.css" type="text/css">
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="metisMenu/metisMenu.min.css" rel="stylesheet">
+        <link href="dist/css/sb-admin-2.css" rel="stylesheet">
+        <link href="morrisjs/morris.css" rel="stylesheet">
+        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+        <link href="datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+        <link href="morrisjs/morris.css" rel="stylesheet">
+        <script type="text/javascript" src="JQUERY/jquery-2.2.0.min.js"></script> 
+        <script type="text/javascript" src="JQUERY-UI-1.11.4/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="js/efectitos.js"></script>
+        <script src ="bootstrap/js/bootstrap.min.js" ></script>
+        <script src="datatables/js/jquery.dataTables.min.js"></script>
+        <script src="datatables-plugins/dataTables.bootstrap.min.js"></script>
+        <script src="datatables-responsive/dataTables.responsive.js"></script>
+        <script src="metisMenu/metisMenu.min.js" ></script>
+        <script src="raphael/raphael.min.js" ></script>
+        <script src="morrisjs/morris.min.js" ></script>
+        <script src="data/morris-data.js" ></script>
+        <script src="js/sb-admin-2.js" ></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="container">
+
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Check in a evento por perfil  
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr class="warning">
+                                            <th>#</th>
+                                            <th>General</th>
+                                            <th>Preferente</th>
+                                            <th>Staff</th>
+                                            <th>Medios</th>
+                                            <th>Acelerador</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="info">
+                                            <td>1</td>
+                                            <td>7500</td>
+                                            <td>1200</td>
+                                            <td>480</td>
+                                            <td>100</td>
+                                            <td>500</td>
+                                        </tr>
+                                        <tr class="success">
+                                            <td>2</td>
+                                            <td>7500</td>
+                                            <td>1200</td>
+                                            <td>480</td>
+                                            <td>100</td>
+                                            <td>500</td>
+                                        </tr>
+                                        <tr class="danger">
+                                            <td>3</td>
+                                            <td>7500</td>
+                                            <td>1200</td>
+                                            <td>480</td>
+                                            <td>100</td>
+                                            <td>500</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Bar Chart Example
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div id="grafica1"></div>
+                            <script>
+                                Morris.Bar({
+                                    element: 'grafica1',
+                                    barColors: ["#3276B1", "#47A447", "#E56690"],
+                                    data: [
+                                        {y: 'General', a: 7500, b: 1200, c: 480},
+                                        {y: 'Preferente', a: 7500, b: 1200, c: 480},
+                                        {y: 'Staff', a: 7500, b: 1200, c: 480},
+                                        {y: 'Medios', a: 7500, b: 1200, c: 480},
+                                        {y: 'Inc Acelerator', a: 7500, b: 1200, c: 480}
+                                    ],
+                                    xkey: 'y',
+                                    ykeys: ['a', 'b', 'c', ],
+                                    labels: ['Día 1', 'Día 2', 'Día 3']
+                                });
+                            </script>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Estadísticas de check in por perfil por conferencia, stand, taller 
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr class="info">
+                                            <th>Actividad</th>
+                                            <th>General</th>
+                                            <th>Preferente</th>
+                                            <th>Staff</th>
+                                            <th>Medios</th>
+                                            <th>Inc Acelerador</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="success">
+                                            <td>Conferencias</td>
+                                            <td >7500</td>
+                                            <td>1200</td>
+                                            <td>480</td>
+                                            <td>100</td>
+                                            <td>500</td>
+                                        </tr>
+                                        <tr class="warning">
+                                            <td>Talleres</td>
+                                            <td>7500</td>
+                                            <td>1200</td>
+                                            <td>480</td>
+                                            <td>100</td>
+                                            <td>500</td>
+                                        </tr>
+                                        <tr class="danger">
+                                            <td>Stands</td>
+                                            <td>7500</td>
+                                            <td>1200</td>
+                                            <td>480</td>
+                                            <td>100</td>
+                                            <td>500</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Bar Chart Example
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div id="grafica2"></div>
+                        <script>
+                            Morris.Bar({
+                                element: 'grafica2',
+                                barColors: ["#322054", "#ED9C28", "#D2322D"],
+                                data: [
+                                    {y: 'General', a: 700, b: 1200, c: 480},
+                                    {y: 'Preferente', a: 500, b: 1200, c: 480},
+                                    {y: 'Staff', a: 800, b: 1200, c: 480},
+                                    {y: 'Medios', a: 900, b: 1200, c: 480},
+                                    {y: 'Inc Acelerator', a: 300, b: 1200, c: 480}
+                                ],
+                                xkey: 'y',
+                                ykeys: ['a', 'b', 'c', ],
+                                labels: ['Total de asistentes a conferencias', 'Total de asistentes a talleres',
+                                    'Total de asistentes a Stands']
+                            });
+                        </script>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Estadísticas de "hora pico" por día de registro y de asistencia a actividades 
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-condensed">
+                                    <thead>
+                                        <tr class="info">
+                                            <th>Hora</th>
+                                            <th>Total</th>                                           
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="success">
+                                            <td>9:00</td>
+                                            <td >7500</td>
+                                        </tr>
+                                        <tr class="warning">
+                                            <td>10:00</td>
+                                            <td>7500</td>
+                                        </tr>
+                                        <tr class="danger">
+                                            <td>11:00</td>
+                                            <td>7500</td>
+                                        </tr>
+                                        <tr class="info">
+                                            <td>12:00</td>
+                                            <td>3200</td>                                           
+                                        </tr>
+                                        <tr class="success">
+                                            <td>13:00</td>
+                                            <td >7500</td>
+                                        </tr>
+                                        <tr class="warning">
+                                            <td>14:00</td>
+                                            <td>7500</td>
+                                        </tr>
+                                        <tr class="danger">
+                                            <td>15:00</td>
+                                            <td>7500</td>
+                                        </tr>
+                                        <tr class="info">
+                                            <td>16:00</td>
+                                            <td>1800</td>                                           
+                                        </tr>
+                                        <tr class="success">
+                                            <td>17:00</td>
+                                            <td >7500</td>
+                                        </tr>
+                                        <tr class="warning">
+                                            <td>18:00</td>
+                                            <td>7500</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+
+                <div class="col-lg-6" style="height: 470px;">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Bar Chart Example
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div id="grafica3"></div>
+                        <script>
+                            Morris.Line({
+                                element: 'grafica3',
+                                parseTime: false,
+                                lineColors: ['#3276B1', '#4DA74D', '#D91E76'],
+                                smooth: false,
+                                data: [
+                                    {y: '9:00', a: 100, b: 90, c: 1},
+                                    {y: '10:00', a: 75, b: 65, c: 1},
+                                    {y: '11:00', a: 50, b: 100, c: 14},
+                                    {y: '12:00', a: 75, b: 65, c: 30},
+                                    {y: '13:00', a: 50, b: 40, c: 155},
+                                    {y: '14:00', a: 75, b: 65, c: 1},
+                                    {y: '15:00', a: 100, b: 90, c: 10},
+                                    {y: '16:00', a: 100, b: 90, c: 10},
+                                    {y: '17:00', a: 100, b: 90, c: 10},
+                                    {y: '18:00', a: 100, b: 90, c: 10}
+                                ],
+                                xkey: 'y',
+                                ykeys: ['a', 'b', 'c'],
+                                labels: ['Total de Asistentes Día 1', 'Total de Asistentes Día 2', 'Total de Asistentes Día 3']
+                            });
+                        </script>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+
+
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Conferencias más populares  
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-condensed">
+                                    <thead>
+                                        <tr class="info">
+                                            <th>#</th>
+                                            <th>Conferencias</th>
+                                            <th>Asistentes</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="success">
+                                            <td>1</td>
+                                            <td>Actividad Vicente Cortina</td>
+                                            <td >3000</td>
+                                        </tr>
+                                        <tr class="warning">
+                                            <td>2</td>
+                                            <td>El Gen Exitoso</td>
+                                            <td>2800</td>
+                                        </tr>
+                                        <tr class="danger">
+                                            <td>3</td>
+                                            <td>Necesidad = Tecnología</td>
+                                            <td>2500</td>
+                                        </tr>
+                                        <tr class="info">
+                                            <td>4</td>
+                                            <td>"Es momento de Spoilear"</td>
+                                            <td>2300</td>
+                                        </tr>
+                                        <tr class="success">
+                                            <td>5</td>
+                                            <td>Conferencia Magistral Intel</td>
+                                            <td >1900</td>
+                                        </tr>
+                                        <tr class="warning">
+                                            <td>6</td>
+                                            <td>Emprendimiento al Volante</td>
+                                            <td>1450</td>
+                                        </tr>
+                                        <tr class="danger">
+                                            <td>7</td>
+                                            <td>Tecnonegocios para mujeres</td>
+                                            <td>1100</td>
+                                        </tr>
+                                        <tr class="info">
+                                            <td>8</td>
+                                            <td>BIG DATA</td>
+                                            <td>800</td>
+                                        </tr>
+                                        <tr class="success">
+                                            <td>9</td>
+                                            <td>La innovación es tradición</td>
+                                            <td >660</td>
+                                        </tr>
+                                        <tr class="warning">
+                                            <td>10</td>
+                                            <td>Actividad Mauricio Palacio</td>
+                                            <td>550</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+
+                <div class="col-lg-6" style="height: 500px;">
+                    <div class="panel panel-default" style="height: 490px;">
+                        <div class="panel-heading">
+                            Bar Chart Example
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div id="grafica4"  style="overflow: hidden; position: relative; left: -0.5px; height: 410px;"></div>
+                        <script>
+                            var day_data = [
+                                {"period": "Actividad", "asistentes": 3000},
+                                {"period": "El Gen Exitoso", "asistentes": 2800},
+                                {"period": "Necesidad = Tecnología", "asistentes": 2500},
+                                {"period": "Es momento de Spoilear", "asistentes": 2300},
+                                {"period": "Conferencia Magistral Intel", "asistentes": 1900},
+                                {"period": "Emprendimiento al Volante", "asistentes": 1450},
+                                {"period": "Tecnonegocios para mujeres", "asistentes": 1100},
+                                {"period": "BIG DATA", "asistentes": 800},
+                                {"period": "La innovación es tradición", "asistentes": 660},
+                                {"period": "Actividad Mauricio Palacio", "asistentes": 550}
+                            ];
+                            Morris.Line({
+                                element: 'grafica4',
+                                data: day_data,
+                                parseTime: false,
+                                smooth: false,
+                                gridTextWeight: 3,
+                                lineColors: ['#800000'],
+                                xkey: 'period',
+                                ykeys: ['asistentes'],
+                                labels: ['Asistentes'],
+                                xLabelAngle: 40
+                            });
+                        </script>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Actividades más populares  
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-condensed">
+                                    <thead>
+                                        <tr class="info">
+                                            <th>#</th>
+                                            <th>Actividades</th>
+                                            <th>Asistentes</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="success">
+                                            <td>1</td>
+                                            <td>Conferencia</td>
+                                            <td >3000</td>
+                                        </tr>
+                                        <tr class="warning">
+                                            <td>2</td>
+                                            <td>Conferencia Emprendedor que inspira</td>
+                                            <td>2800</td>
+                                        </tr>
+                                        <tr class="danger">
+                                            <td>3</td>
+                                            <td>Conferencia Magistral</td>
+                                            <td>2500</td>
+                                        </tr>
+                                        <tr class="info">
+                                            <td>4</td>
+                                            <td>Expo Corporativos y organismos</td>
+                                            <td>2300</td>
+                                        </tr>
+                                        <tr class="success">
+                                            <td>5</td>
+                                            <td>Expo Startup INCmty Accelerator</td>
+                                            <td >1900</td>
+                                        </tr>
+                                        <tr class="warning">
+                                            <td>6</td>
+                                            <td>Expo Techtrends playground</td>
+                                            <td>1450</td>
+                                        </tr>
+                                        <tr class="danger">
+                                            <td>7</td>
+                                            <td>Firma de libros</td>
+                                            <td>1100</td>
+                                        </tr>
+                                        <tr class="info">
+                                            <td>8</td>
+                                            <td>Lanzamiento</td>
+                                            <td>800</td>
+                                        </tr>
+                                        <tr class="success">
+                                            <td>9</td>
+                                            <td>Meetup</td>
+                                            <td >660</td>
+                                        </tr>
+                                        <tr class="warning">
+                                            <td>10</td>
+                                            <td>Mentoring Session</td>
+                                            <td>550</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+
+                <div class="col-lg-6" style="height: 500px;">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Bar Chart Example
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div id="grafica5"></div>
+                        <script>
+                            var day_data = [
+                                {"period": "Actividad Vicente Cortina", "asistentes": 3000},
+                                {"period": "El Gen Exitoso", "asistentes": 2700},
+                                {"period": "Necesidad = Tecnología", "asistentes": 2200},
+                                {"period": "Es momento de Spoilear", "asistentes": 1900},
+                                {"period": "Conferencia Magistral Intel", "asistentes": 1700},
+                                {"period": "Emprendimiento al Volante", "asistentes": 1450},
+                                {"period": "Tecnonegocios para mujeres", "asistentes": 1110},
+                                {"period": "BIG DATA", "asistentes": 800},
+                                {"period": "La innovación es tradición", "asistentes": 500},
+                                {"period": "Actividad Mauricio Palacio", "asistentes": 150}
+                            ];
+                            Morris.Line({
+                                element: 'grafica5',
+                                data: day_data,
+                                parseTime: false,
+                                smooth: false,
+                                lineColors: ['#757DC9'],
+                                xkey: 'period',
+                                ykeys: ['asistentes'],
+                                labels: ['Asistentes'],
+                                xLabelAngle: 60
+                            });
+                        </script>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Tiempo aproximado por check-in por boleto 
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-condensed">
+                                    <thead>
+                                        <tr class="info">
+                                            <th>Hora</th>
+                                            <th>General</th>
+                                            <th>Preferente</th>
+                                            <th>Staff</th>
+                                            <th>Medios</th>
+                                            <th>Inc Acelerator</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="success">
+                                            <td>9:00</td>
+                                            <td >7500</td>
+                                            <td>1450</td>
+                                            <td>520</td>
+                                            <td>586</td>
+                                            <td>4</td>
+                                        </tr>
+                                        <tr class="warning">
+                                            <td>10:00</td>
+                                            <td>7500</td>
+                                            <td>98</td>
+                                            <td>471</td>
+                                            <td>3652</td>
+                                            <td>120</td>
+                                        </tr>
+                                        <tr class="danger">
+                                            <td>11:00</td>
+                                            <td>7500</td>
+                                            <td>852</td>
+                                            <td>41</td>
+                                            <td>587</td>
+                                            <td>41</td>
+                                        </tr>
+                                        <tr class="info">
+                                            <td>12:00</td>
+                                            <td>3200</td>
+                                            <td>47</td>
+                                            <td>745</td>
+                                            <td>965</td>
+                                            <td>258</td>
+                                        </tr>
+                                        <tr class="success">
+                                            <td>13:00</td>
+                                            <td >7500</td>
+                                            <td>412</td>
+                                            <td>741</td>
+                                            <td>968</td>
+                                            <td>88</td>
+                                        </tr>
+                                        <tr class="warning">
+                                            <td>14:00</td>
+                                            <td>7500</td>
+                                            <td>745</td>
+                                            <td>78</td>
+                                            <td>100</td>
+                                            <td>865</td>
+                                        </tr>
+                                        <tr class="danger">
+                                            <td>15:00</td>
+                                            <td>7500</td>
+                                            <td>410</td>
+                                            <td>785</td>
+                                            <td>514</td>
+                                            <td>11</td>
+                                        </tr>
+                                        <tr class="info">
+                                            <td>16:00</td>
+                                            <td>1800</td>
+                                            <td>574</td>
+                                            <td>11</td>
+                                            <td>147</td>
+                                            <td>852</td>
+                                        </tr>
+                                        <tr class="success">
+                                            <td>17:00</td>
+                                            <td >7500</td>
+                                            <td>74</td>
+                                            <td>785</td>
+                                            <td>742</td>
+                                            <td>985</td>
+                                        </tr>
+                                        <tr class="warning">
+                                            <td>18:00</td>
+                                            <td>7500</td>
+                                            <td>741</td>
+                                            <td>89</td>
+                                            <td>5</td>
+                                            <td>13</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+
+                <div class="col-lg-6" style="height: 470px;">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Bar Chart Example
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div id="grafica6"></div>
+                        <script>
+                            Morris.Line({
+                                element: 'grafica6',
+                                parseTime: false,
+                                lineColors: ['#3276B1', '#4DA74D', '#D91E76', '#F5B553', '#800000'],
+                                smooth: false,
+                                data: [
+                                    {y: '9:00', a: 100, b: 90, c: 1, d: 150, f: 78},
+                                    {y: '10:00', a: 75, b: 65, c: 1, d: 90, f: 98},
+                                    {y: '11:00', a: 50, b: 100, c: 14, d: 10, f: 78},
+                                    {y: '12:00', a: 75, b: 65, c: 30, d: 70, f: 38},
+                                    {y: '13:00', a: 50, b: 40, c: 155, d: 30, f: 78},
+                                    {y: '14:00', a: 75, b: 65, c: 1, d: 88, f: 48},
+                                    {y: '15:00', a: 100, b: 90, c: 10, d: 50, f: 80},
+                                    {y: '16:00', a: 100, b: 90, c: 70, d: 60, f: 78},
+                                    {y: '17:00', a: 100, b: 90, c: 90, d: 50, f: 78},
+                                    {y: '18:00', a: 100, b: 90, c: 10, d: 40, f: 78}
+                                ],
+                                xkey: 'y',
+                                ykeys: ['a', 'b', 'c', 'd', 'f'],
+                                labels: ['General', 'Preferente', 'Staff', 'Medios', 'Inc acelerator']
+                            });
+                        </script>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Estadísticas por género a INCmty  
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr class="warning">
+                                            <th>#</th>
+                                            <th>Hombres</th>
+                                            <th>Mujeres</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="info">
+                                            <td>Día 1</td>
+                                            <td>500</td>
+                                            <td>100</td>
+                                        </tr>
+                                        <tr class="success">
+                                            <td>Día 2</td>
+                                            <td>700</td>
+                                            <td>200</td>
+                                        </tr>
+                                        <tr class="danger">
+                                            <td>Día 3</td>
+                                            <td>800</td>
+                                            <td>120</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Bar Chart Example
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div id="grafica7"></div>
+                            <script>
+                                Morris.Bar({
+                                    element: 'grafica7',
+                                    barColors: ["#3276B1", "#E25781", "#98B600"],
+                                    data: [
+                                        {y: 'Hombres', a: 3500, b: 1700, c: 780},
+                                        {y: 'Mujeres', a: 1500, b: 1300, c: 480}
+                                    ],
+                                    xkey: 'y',
+                                    ykeys: ['a', 'b', 'c', ],
+                                    labels: ['Día 1', 'Día 2', 'Día 3']
+                                });
+                            </script>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Impresos  
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr class="warning">
+                                            <th>#</th>
+                                            <th>Impresos</th>
+                                            <th>No Impresos</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="info">
+                                            <td>Día 1</td>
+                                            <td>500</td>
+                                            <td>1200</td>
+                                        </tr>
+                                        <tr class="success">
+                                            <td>Día 2</td>
+                                            <td>70</td>
+                                            <td>120</td>
+                                        </tr>
+                                        <tr class="danger">
+                                            <td>Día 3</td>
+                                            <td>50</td>
+                                            <td>1200</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Bar Chart Example
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div id="grafica8"></div>
+                            <script>
+                                Morris.Bar({
+                                    element: 'grafica8',
+                                    barColors: ["#E91E63", "#03A9F4", "#FF5722"],
+                                    data: [
+                                        {y: 'Hombres', a: 500, b: 700, c: 780},
+                                        {y: 'Mujeres', a: 100, b: 130, c: 480}
+                                    ],
+                                    xkey: 'y',
+                                    ykeys: ['a', 'b', 'c', ],
+                                    labels: ['Día 1', 'Día 2', 'Día 3']
+                                });
+                            </script>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Tiempo promedio en llenarse las actividades 
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table table-condensed">
+                                    <thead>
+                                        <tr class="info">
+                                            <th>#</th>
+                                            <th>Actividades</th>
+                                            <th>Minutos</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="success">
+                                            <td>1</td>
+                                            <td>Conferencia</td>
+                                            <td >3000</td>
+                                        </tr>
+                                        <tr class="warning">
+                                            <td>2</td>
+                                            <td>Conferencia Emprendedor que inspira</td>
+                                            <td>2800</td>
+                                        </tr>
+                                        <tr class="danger">
+                                            <td>3</td>
+                                            <td>Conferencia Magistral</td>
+                                            <td>2500</td>
+                                        </tr>
+                                        <tr class="info">
+                                            <td>4</td>
+                                            <td>Expo Corporativos y organismos</td>
+                                            <td>2300</td>
+                                        </tr>
+                                        <tr class="success">
+                                            <td>5</td>
+                                            <td>Expo Startup INCmty Accelerator</td>
+                                            <td >1900</td>
+                                        </tr>
+                                        <tr class="warning">
+                                            <td>6</td>
+                                            <td>Expo Techtrends playground</td>
+                                            <td>1450</td>
+                                        </tr>
+                                        <tr class="danger">
+                                            <td>7</td>
+                                            <td>Firma de libros</td>
+                                            <td>1100</td>
+                                        </tr>
+                                        <tr class="info">
+                                            <td>8</td>
+                                            <td>Lanzamiento</td>
+                                            <td>800</td>
+                                        </tr>
+                                        <tr class="success">
+                                            <td>9</td>
+                                            <td>Meetup</td>
+                                            <td >660</td>
+                                        </tr>
+                                        <tr class="warning">
+                                            <td>10</td>
+                                            <td>Mentoring Session</td>
+                                            <td>550</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Bar Chart Example
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div id="grafica9"></div>
+                            <script>
+                                Morris.Bar({
+                                    element: 'grafica9',
+                                    data: [
+                                        {y: 'Person A', a: 10},
+                                        {y: 'Person B', a: 15},
+                                        {y: 'Person C', a: 12},
+                                        {y: 'Person D', a: 20},
+                                        {y: 'Person F', a: 30},
+                                        {y: 'Person G', a: 8},
+                                        {y: 'Person H', a: 15},
+                                        {y: 'Person I', a: 18},
+                                        {y: 'Person J', a: 33},
+                                        {y: 'Person K', a: 29}
+                                    ],
+                                    xkey: 'y',
+                                    ykeys: ['a'],
+                                    labels: ['Calls'],
+                                    hideHover: 'always',
+                                    barColors: function (row, series, type) {
+                                        console.log("--> " + row.label, series, type);
+                                        if (row.label == "Person A")
+                                            return "#ED7643";
+                                        else if (row.label == "Person B")
+                                            return "#6DB74D";
+                                        else if (row.label == "Person C")
+                                            return "#0A8D99";
+                                        else if (row.label == "Person D")
+                                            return "#34B6E8";
+                                        else if (row.label == "Person F")
+                                            return "#E9599F";
+                                        else if (row.label == "Person G")
+                                            return "#E8555E";
+                                        else if (row.label == "Person H")
+                                            return "#6974BB";
+                                        else if (row.label == "Person I")
+                                            return "#F7DF1E";
+                                        else if (row.label == "Person J")
+                                            return "#A67833";
+                                        else if (row.label == "Person K")
+                                            return "#B7BEC5";
+                                    }
+                                });
+
+
+                            </script>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+
+
+
+
+            </div>         
+        </div>
+    </body>
+</html>

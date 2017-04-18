@@ -1,0 +1,8 @@
+{
+    "name": "graficas_inc",
+    "version": "1.0.0",
+    "keywords": ["util", "functional", "server", "client", "browser"],
+    "author": "usuario1",
+    "contributors": [],
+    "dependencies": {}
+}
